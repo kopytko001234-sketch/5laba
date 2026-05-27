@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Царский Никита Сергеевич">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Калькулятор, Math">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Калькулятор">
     <meta name="description" content="Лабораторная работа 5 - Web-калькулятор">
     <link rel="stylesheet" href="style.css">
     <title>Мой первый простой сайт - Калькулятор</title>
@@ -12,43 +12,43 @@
     <script type="text/javascript">
         // Функция сложения (+)
         function summ() {
-            var a = parseFloat(window.document.form1.T1.value) || 0;
-            var b = parseFloat(window.document.form1.T2.value) || 0;
-            window.document.form1.T3.value = a + b;
+            var a = parseFloat(document.form1.T1.value) || 0;
+            var b = parseFloat(document.form1.T2.value) || 0;
+            document.form1.T3.value = a + b;
         }
 
         // Функция вычитания (-)
         function razn() {
-            var a = parseFloat(window.document.form1.T1.value) || 0;
-            var b = parseFloat(window.document.form1.T2.value) || 0;
-            window.document.form1.T3.value = a - b;
+            var a = parseFloat(document.form1.T1.value) || 0;
+            var b = parseFloat(document.form1.T2.value) || 0;
+            document.form1.T3.value = a - b;
         }
 
-        // Функция умножения (*) - ИСПРАВЛЕНО
-        function proizv() {
-            var a = parseFloat(window.document.form1.T1.value) || 0;
-            var b = parseFloat(window.document.form1.T2.value) || 0;
-            window.document.form1.T3.value = a * b;
+        // Функция умножения (*) - Теперь называется просто и надежно
+        function umnozh() {
+            var a = parseFloat(document.form1.T1.value) || 0;
+            var b = parseFloat(document.form1.T2.value) || 0;
+            document.form1.T3.value = a * b;
         }
 
         // Функция деления (/)
         function chast() {
-            var a = parseFloat(window.document.form1.T1.value) || 0;
-            var b = parseFloat(window.document.form1.T2.value) || 0;
+            var a = parseFloat(document.form1.T1.value) || 0;
+            var b = parseFloat(document.form1.T2.value) || 0;
             if (b !== 0) {
-                window.document.form1.T3.value = a / b;
+                document.form1.T3.value = a / b;
             } else {
-                window.document.form1.T3.value = "Деление на 0!";
+                document.form1.T3.value = "Деление на 0!";
             }
         }
 
-        // Функция СЕ (стереть всё и вернуть фокус)
+        // Функция СЕ (очистить всё)
         function steret() {
-            window.document.form1.T1.value = 0;
-            window.document.form1.T2.value = 0;
-            window.document.form1.T3.value = 0;
-            window.document.form1.T1.focus();
-            window.document.form1.T1.select();
+            document.form1.T1.value = 0;
+            document.form1.T2.value = 0;
+            document.form1.T3.value = 0;
+            document.form1.T1.focus();
+            document.form1.T1.select();
         }
     </script>
 </head>
@@ -85,7 +85,7 @@
  
             <div id="right">
                 <h2>Страница Web-калькулятор</h2>
-                <p>Данный раздел демонстрирует возможности обработки элементов экранной формы и использования встроенного класса <code>Math</code> для математических вычислений.</p>
+                <p>Данный раздел демонстрирует возможности обработки элементов экранной формы и выполнения математических вычислений на JavaScript.</p>
                 <hr>
                 
                 <h3>Инженерный калькулятор</h3>
@@ -102,7 +102,7 @@
                     <div style="margin-top: 15px;">
                         <input type="button" value="  +  " onclick="summ()" style="padding: 5px 12px; cursor: pointer; font-weight: bold; margin-right: 4px;">
                         <input type="button" value="  -  " onclick="razn()" style="padding: 5px 12px; cursor: pointer; font-weight: bold; margin-right: 4px;">
-                        <input type="button" value="  * " onclick="proiz()" style="padding: 5px 12px; cursor: pointer; font-weight: bold; margin-right: 4px;">
+                        <input type="button" value="  * " onclick="umnozh()" style="padding: 5px 12px; cursor: pointer; font-weight: bold; margin-right: 4px;">
                         <input type="button" value="  /  " onclick="chast()" style="padding: 5px 12px; cursor: pointer; font-weight: bold;">
                     </div>
                     
